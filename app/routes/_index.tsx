@@ -11,6 +11,7 @@ import {
 
 import { AppData } from '~/const/AppData'
 import { AppResource } from '~/const/AppResource'
+import { DesktopContainer } from '~/const/StyleGlobal'
 export const meta: MetaFunction = () => {
   return [
     { title: 'dichua.com' },
@@ -36,7 +37,7 @@ export default function Index() {
             >
               <CarouselContent className="">
                 {AppData.dataBanner?.map((item, index) => (
-                  <CarouselItem key={index} className="basis-2/4">
+                  <CarouselItem key={index} className="base-1 lg:basis-2/4">
                     <img
                       src={item?.img}
                       alt=""
@@ -45,8 +46,10 @@ export default function Index() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <DesktopContainer>
+                <CarouselPrevious />
+                <CarouselNext />
+              </DesktopContainer>
             </Carousel>
           </div>
           <TextTitle title="Video Nổi bật" />

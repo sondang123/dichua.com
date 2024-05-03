@@ -62,19 +62,35 @@ export default function PagodaOnline() {
               className="aspect-[21/9] w-full object-cover object-bottom "
             />
             {selectStatus === typeSelect?.THAP_HUONG ? (
-              <img
-                src={AppResource.images.img_lu_huong}
-                alt=""
-                className={cn(
-                  'tr absolute left-[50%] w-[170px] translate-x-[-50%] transform duration-500 animate-in slide-in-from-top',
-                  selectShop?.length > 0 ? 'bottom-[97px]' : 'bottom-[0px]'
-                )}
-              />
+              <div>
+                <img
+                  src={AppResource.images.img_lu_huong}
+                  alt=""
+                  className={cn(
+                    'tr absolute left-[50%] w-[60px] translate-x-[-50%] transform duration-500 animate-in slide-in-from-top lg:w-[170px]',
+                    selectShop?.length > 0
+                      ? 'bottom-[10px] lg:bottom-[97px]'
+                      : 'bottom-[0px]'
+                  )}
+                />
+                <div id="smoke">
+                  <span className="s0"></span>
+                  <span className="s1"></span>
+                  <span className="s2"></span>
+                  <span className="s3"></span>
+                  <span className="s4"></span>
+                  <span className="s5"></span>
+                  <span className="s6"></span>
+                  <span className="s7"></span>
+                  <span className="s8"></span>
+                  <span className="s9"></span>
+                </div>
+              </div>
             ) : null}
-            <div className="absolute bottom-[120px] left-[10px] ">
+            <div className="absolute bottom-[10px] left-[10px] lg:bottom-[120px] ">
               <Dialog open={showModalShop} onOpenChange={setShowModalShop}>
                 <DialogTrigger>
-                  <i className="ri-store-fill ri-2x cursor-pointer rounded-[50%] bg-white p-3 hover:opacity-80"></i>
+                  <i className="ri-store-fill lg:ri-2x cursor-pointer rounded-[50%] bg-white p-2 hover:opacity-80 lg:p-3"></i>
                 </DialogTrigger>
                 <ModalShop
                   open={showModalShop}
@@ -106,7 +122,7 @@ export default function PagodaOnline() {
               Xin thường niệm Nam mô a di đà phật
             </p>
           </div>
-          <div className="mt-4 flex justify-center gap-3">
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
             <Button
               onClick={() => {
                 setSelectStatus(typeSelect?.THAP_HUONG)
@@ -131,7 +147,10 @@ export default function PagodaOnline() {
             <Dialog open={showModalFile} onOpenChange={setShowModalFile}>
               <DialogContent>
                 <div>
-                  <div className="mt-1 grid grid-cols-12 gap-5 " id="phieu">
+                  <div
+                    className="mt-1 grid grid-cols-12 gap-5 overflow-x-auto "
+                    id="phieu"
+                  >
                     <div className="col-span-12 mb-3 pt-5">
                       <h3 className="typo-s32-w400 border-b pb-2 text-center font-plus-jakarta-sans font-bold">
                         Phiếu ghi nhận công đức

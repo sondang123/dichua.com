@@ -29,7 +29,7 @@ export const ModalShop: React.FC<props> = ({ onSubmit = () => {} }) => {
                 {item?.list?.map((itemList, index) => (
                   <div
                     className={
-                      'col-span-4 flex h-full cursor-pointer flex-col border'
+                      'col-span-6 flex h-full cursor-pointer flex-col border lg:col-span-4'
                     }
                     key={index}
                   >
