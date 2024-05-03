@@ -6,7 +6,7 @@ import { ModalOffering } from '~/components/PagodaOnlineComponents/ModalOffering
 import { ModalShop } from '~/components/PagodaOnlineComponents/ModalShop'
 import { ReadBuddhist } from '~/components/PagodaOnlineComponents/ReadBuddhist'
 import { Button } from '~/components/ui/button'
-import { Dialog, DialogTrigger } from '~/components/ui/dialog'
+import { Dialog, DialogContent, DialogTrigger } from '~/components/ui/dialog'
 import { AppResource } from '~/const/AppResource'
 import { cn } from '~/lib/utils'
 export const meta: MetaFunction = () => {
@@ -29,6 +29,14 @@ enum typeSelect {
 export default function PagodaOnline() {
   const [selectStatus, setSelectStatus] = useState<typeSelect>()
   const [showModalShop, setShowModalShop] = useState<boolean>(false)
+  const [showModalFile, setShowModalFile] = useState<boolean>(false)
+  const [showModalForm, setShowModalForm] = useState<boolean>(false)
+  const [valueForm, setValueForm] = useState<{
+    username?: string
+    money?: string
+    address?: string
+  } | null>()
+
   const [selectShop, setSelectShop] = useState<
     {
       img?: string
@@ -108,12 +116,59 @@ export default function PagodaOnline() {
               Thắp hương
             </Button>
 
-            <Dialog>
+            <Dialog open={showModalForm} onOpenChange={setShowModalForm}>
               <DialogTrigger asChild>
                 <Button className="bg-orange-500">Công đức</Button>
               </DialogTrigger>
-              <ModalOffering />
+              <ModalOffering
+                handleSubmit={(value) => {
+                  setValueForm(value)
+                  setShowModalFile(true)
+                  setShowModalForm(false)
+                }}
+              />
             </Dialog>
+            <Dialog open={showModalFile} onOpenChange={setShowModalFile}>
+              <DialogContent>
+                <div>
+                  <div className="mt-1 grid grid-cols-12 gap-5 " id="phieu">
+                    <div className="col-span-12 mb-3 pt-5">
+                      <h3 className="typo-s32-w400 border-b pb-2 text-center font-plus-jakarta-sans font-bold">
+                        Phiếu ghi nhận công đức
+                      </h3>
+
+                      <p className="typo-s18-w500 py-2 text-center">
+                        <span className="text-sematic-1">
+                          Ngày 03 tháng 05 năm 2024
+                        </span>
+                      </p>
+                      <div>
+                        <p>Họ và tên: {valueForm?.username}</p>
+                        <p>Số tiền: {valueForm?.money}đ</p>
+                        <p>Địa chỉ : {valueForm?.address}</p>
+                      </div>
+                      <div>
+                        {' '}
+                        <p className="pt-2 italic text-error">
+                          Xin trân thành cảm ơn bạn {valueForm?.username} đã
+                          công đức số tiền {valueForm?.money}đ về dichua.com ,
+                          kính chúc bạn và gia đình hạnh phúc .
+                          <br />
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-span-12">
+                      <img
+                        src={AppResource.images.img_anh_phat}
+                        alt=""
+                        className="w-full object-cover "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <Button className="bg-orange-400">Gieo quẻ</Button>
             <Button
               className="bg-orange-300"
@@ -136,8 +191,6 @@ export default function PagodaOnline() {
             {selectStatus === typeSelect?.NGOI_THIEN ? <Meditate /> : null}
             {selectStatus === typeSelect?.DOC_KINH ? <ReadBuddhist /> : null}
           </div>
-
-          {/* <FilePrint /> */}
         </div>
       </div>
     </div>
