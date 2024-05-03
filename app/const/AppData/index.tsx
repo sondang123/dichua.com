@@ -92,7 +92,7 @@ export const AppData = {
         {
           img: AppResource.images.img_nen,
           name: 'Nến phúc khí',
-          price: '20.000đ',
+          price: '200.000đ',
         },
       ],
     },
