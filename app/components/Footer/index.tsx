@@ -14,25 +14,22 @@ export const Footer: React.FC<Props> = () => {
           backgroundSize: '65%',
         }}
       >
-
-        <div className="grid grid-cols-12 gap-5 gap-y-10 mt-10  border-b-2 border-neutral-7 pb-10">
+        <div className="mt-10 grid grid-cols-12 gap-5 gap-y-10  border-b-2 border-neutral-7 pb-10">
           <div className="col-span-12 lg:col-span-8 ">
             <div>
               <img
-                src={AppResource.images.img_logo_white}
+                src={AppResource.images.img_logo}
                 alt="logo"
                 className="w-[50%] lg:w-[30%]"
               />
             </div>
-            <h5 className="typo-s24-w500 mt-10 text-neutral-2">
-              GODHITECH JOINT STOCK COMPANY
-            </h5>
+            <h5 className="typo-s24-w500 mt-10 text-neutral-2">ĐI C</h5>
             <div className="mt-5 flex items-start">
               <p className="typo-s18-w700 w-[100px] text-neutral-4">Email:</p>
               <p className="typo-s18-w500 text-neutral-4">
                 <a
                   href="mailto:contact@godhitech.com"
-                  className="hover:opacity-80 transition"
+                  className="transition hover:opacity-80"
                 >
                   contact@godhitech.com
                 </a>
@@ -45,7 +42,7 @@ export const Footer: React.FC<Props> = () => {
                   href="https://godhitech.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 transition"
+                  className="transition hover:opacity-80"
                 >
                   https://godhitech.com
                 </a>
@@ -63,12 +60,12 @@ export const Footer: React.FC<Props> = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-4 lg:ml-auto">
-            <span className="text-white typo-s24-w500">Menu</span>
-            <div className="h-[2px] w-[50px] bg-main-primary mt-2"></div>
+            <span className="typo-s24-w500 text-white">Menu</span>
+            <div className="mt-2 h-[2px] w-[50px] bg-main-primary"></div>
             {AppData.dataMenu?.map((item, index) => (
               <div key={index} className="mt-5">
-                <Link to={item?.link} className="hover:opacity-80 transition">
-                  <p className="text-neutral-4 typo-s18-w500">{item?.title}</p>
+                <Link to={item?.link} className="transition hover:opacity-80">
+                  <p className="typo-s18-w500 text-neutral-4">{item?.title}</p>
                 </Link>
               </div>
             ))}

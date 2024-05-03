@@ -1,6 +1,5 @@
-import { Link, useLocation, useNavigate } from '@remix-run/react'
+import { Link, useLocation } from '@remix-run/react'
 import React, { useEffect, useState } from 'react'
-import { ButtonFullBg } from '~/components/AppButton/ButtonFullBg'
 import { Sheet, SheetContent, SheetTrigger } from '~/components/ui/sheet'
 import { AppData } from '~/const/AppData'
 import { AppResource } from '~/const/AppResource'
@@ -11,7 +10,7 @@ export interface IHeaderProps {}
 
 export const Header: React.FC<IHeaderProps> = () => {
   const { pathname } = useLocation()
-  const navigate = useNavigate()
+
   const [isSticky, setIsSticky] = useState(false)
   const [open, setOpen] = React.useState(false)
   useEffect(() => {
@@ -44,7 +43,7 @@ export const Header: React.FC<IHeaderProps> = () => {
                 <img
                   src={AppResource.images.img_logo}
                   alt="logo"
-                  className="h-[44px] object-contain"
+                  className="h-[80px] object-contain"
                 />
               </Link>
               <div className="flex items-center">
@@ -56,7 +55,7 @@ export const Header: React.FC<IHeaderProps> = () => {
                     return (
                       <Link
                         to={item?.link}
-                        className="hover:opacity-80 p-3 mr-3 border-b-2 border-main-primary transition"
+                        className="mr-3 border-b-2 border-main-primary p-3 transition hover:opacity-80"
                         key={index}
                       >
                         <p className="typo-s16-w700 text-main-primary">
@@ -68,7 +67,7 @@ export const Header: React.FC<IHeaderProps> = () => {
                     return (
                       <Link
                         to={item?.link}
-                        className="hover:opacity-80 p-5 mr-3 transition"
+                        className="mr-3 p-5 transition hover:opacity-80"
                         key={index}
                       >
                         <p className="typo-s16-w500 text-neutral-5">
@@ -79,14 +78,14 @@ export const Header: React.FC<IHeaderProps> = () => {
                   }
                 })}
               </div>
-              <div>
+              {/* <div>
                 <ButtonFullBg
                   title={<p className="typo-s16-w500 text-white">Let’s talk</p>}
                   onClick={() => {
                     navigate('/contact')
                   }}
                 />
-              </div>
+              </div> */}
             </nav>
           </div>
         </div>
@@ -138,13 +137,13 @@ export const Header: React.FC<IHeaderProps> = () => {
                           return (
                             <Link
                               to={item?.link}
-                              className="hover:opacity-80 transition"
+                              className="transition hover:opacity-80"
                               key={index}
                               onClick={() => {
                                 setOpen(false)
                               }}
                             >
-                              <p className="typo-s16-w700 text-main-primary py-3 border-b border-shapes-2">
+                              <p className="typo-s16-w700 border-b border-shapes-2 py-3 text-main-primary">
                                 {item?.title}
                               </p>
                             </Link>
@@ -153,13 +152,13 @@ export const Header: React.FC<IHeaderProps> = () => {
                           return (
                             <Link
                               to={item?.link}
-                              className="hover:opacity-80 transition"
+                              className="transition hover:opacity-80"
                               key={index}
                               onClick={() => {
                                 setOpen(false)
                               }}
                             >
-                              <p className="typo-s16-w500 text-neutral-5 py-3 border-b border-shapes-2">            
+                              <p className="typo-s16-w500 border-b border-shapes-2 py-3 text-neutral-5">
                                 {item?.title}
                               </p>
                             </Link>

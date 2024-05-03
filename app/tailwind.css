@@ -71,9 +71,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground scroll-smooth;
+    @apply scroll-smooth bg-background text-foreground;
   }
   .flex-center {
     @apply flex items-center justify-center;
+  }
+}
+.scrolling-text {
+  animation: scroll-text 20s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

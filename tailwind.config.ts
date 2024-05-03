@@ -112,7 +112,6 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       fontFamily: {
-        'krona-one': ['Krona One', 'sans-serif'],
         'plus-jakarta-sans': ['Plus Jakarta Sans', 'sans-serif'],
         mulish: ['Mulish', 'sans-serif'],
       },
@@ -163,7 +162,7 @@ const config = {
         '.typo-s64-w400': {
           fontSize: '64px',
           fontWeight: '400',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           textAlign: 'left',
           letterSpacing: '-6px',
           '@media (max-width:768px )': {
@@ -174,7 +173,7 @@ const config = {
         '.typo-s48-w400': {
           fontSize: '48px',
           fontWeight: '400',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           '@media (max-width:768px )': {
             fontSize: '24px',
           },
@@ -182,7 +181,7 @@ const config = {
         '.typo-s32-w400': {
           fontSize: '32px',
           fontWeight: '400',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           '@media (max-width:768px )': {
             fontSize: '20px',
           },
@@ -190,7 +189,7 @@ const config = {
         '.typo-s24-w700': {
           fontSize: '24px',
           fontWeight: '700',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           '@media (max-width:768px )': {
             fontSize: '20px',
           },
@@ -198,7 +197,7 @@ const config = {
         '.typo-s24-w500': {
           fontSize: '24px',
           fontWeight: '500',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           textAlign: 'left',
           '@media (max-width:768px )': {
             fontSize: '20px',
@@ -207,7 +206,7 @@ const config = {
         '.typo-s24-w400': {
           fontSize: '24px',
           fontWeight: '400',
-          fontFamily: theme('fontFamily.krona-one'),
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
           textAlign: 'left',
           '@media (max-width:768px )': {
             fontSize: '20px',
@@ -217,6 +216,15 @@ const config = {
           fontSize: '20px',
           fontWeight: '700',
           fontFamily: theme('fontFamily.plus-jakarta-sans'),
+          '@media (max-width:768px )': {
+            fontSize: '16px',
+          },
+        },
+        '.typo-s20-w600': {
+          fontSize: '20px',
+          fontWeight: '600',
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
+          textAlign: 'left',
           '@media (max-width:768px )': {
             fontSize: '16px',
           },
@@ -235,6 +243,15 @@ const config = {
           fontWeight: '700',
           fontFamily: theme('fontFamily.plus-jakarta-sans'),
           color: theme('colors.neutral-4'),
+        },
+        '.typo-s18-w600': {
+          fontSize: '18px',
+          fontWeight: '600',
+          fontFamily: theme('fontFamily.plus-jakarta-sans'),
+          color: theme('colors.neutral-4'),
+          '@media (max-width:768px )': {
+            fontSize: '14px',
+          },
         },
         '.typo-s18-w500': {
           fontSize: '18px',

@@ -22,7 +22,7 @@ export const WrapperTextTitle: React.FC<IWrapperTextTitleProps> = ({
         <p
           className={cn(
             'typo-s20-w400 mb-3 text-main-primary',
-            textLeft ? 'text-left' : 'text-center',
+            textLeft ? 'text-left' : 'text-center'
           )}
         >
           {nameSection}
@@ -31,9 +31,9 @@ export const WrapperTextTitle: React.FC<IWrapperTextTitleProps> = ({
       {title ? (
         <h3
           className={cn(
-            'typo-s48-w400 tracking-[0px] lg:tracking-[-4px]',
-            textLeft ? 'text-left' : 'text-center mx-auto',
-            classNameTitle,
+            'typo-s48-w400 ',
+            textLeft ? 'text-left' : 'mx-auto text-center',
+            classNameTitle
           )}
         >
           {title}
@@ -44,9 +44,9 @@ export const WrapperTextTitle: React.FC<IWrapperTextTitleProps> = ({
           className={cn(
             'typo-s20-w400 mt-3 text-neutral-5',
             textLeft
-              ? ' lg:w-[90%] text-left'
-              : 'text-center lg:w-[40%] mx-auto',
-            classNameSubTitle,
+              ? ' text-left lg:w-[90%]'
+              : 'mx-auto text-center lg:w-[40%]',
+            classNameSubTitle
           )}
         >
           {subTitle}

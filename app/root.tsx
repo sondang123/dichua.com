@@ -11,9 +11,8 @@ import tailwind from './tailwind.css?url'
 
 import 'remixicon/fonts/remixicon.css'
 
-import { Header } from './components/Header'
-import { Footer } from './components/Footer'
 import { Toaster } from '~/components/ui/toaster'
+import { Header } from './components/Header'
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: tailwind },
@@ -63,7 +62,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className="font-PlusJakarta">
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
         <ScrollRestoration />
         {/* <script
           type="module"
